@@ -7,17 +7,22 @@ public class GameManager : MonoBehaviour
 {
     private VisualElement root;
     private Slider rage;
+    private Label label;
     private VisualElement playerStateImage;
     
 
     public void OnEnable() {
-        root = GetComponent<UIDocument>().rootVisualElement;
-        Debug.Log(root);
         
+        
+        // https://forum.unity.com/threads/how-can-we-attach-script-to-our-uxml-uss-at-runtime.872242/
+        root = GetComponent<UIDocument>().rootVisualElement;
+        Debug.Log(root.name);
+        
+        label = root.Q<Label>("game-label");
+        label.text = Application.productName;
 
-        rage = root.Q<Slider>("Rage");
-        playerStateImage = root.Q<VisualElement>("PlayerStateImage");
-    
+        // playerStateImage = root.Q<VisualElement>("PlayerStateImage");
+
     }
 
     

@@ -1,9 +1,7 @@
-<!--AppVisualTree.uxml-->
-
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="AppStyles.uss" />
     <ui:VisualElement>
-        <ui:Label text="Label" display-tooltip-when-elided="True" style="-unity-background-image-tint-color: rgba(209, 117, 28, 255); font-size: 58px;" />
+        <ui:Label text="Game " display-tooltip-when-elided="True" name="game-label" style="-unity-background-image-tint-color: rgb(209, 117, 28); font-size: 58px; align-items: auto; justify-content: space-around; opacity: 0.8; visibility: visible; color: rgba(200, 55, 55, 255); -unity-font-style: italic;" />
     </ui:VisualElement>
-    <ui:Button text="Start Game&#10;" display-tooltip-when-elided="True" name="start-game" />
+    <ui:Button text="Start Game&#10;" display-tooltip-when-elided="True" name="start-game" view-data-key="game-view-data-key" />
 </ui:UXML>
