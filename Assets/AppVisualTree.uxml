@@ -1,7 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="AppStyles.uss" />
     <ui:VisualElement>
-        <ui:Label text="Game " display-tooltip-when-elided="True" name="game-label" style="-unity-background-image-tint-color: rgb(209, 117, 28); font-size: 58px; align-items: auto; justify-content: space-around; opacity: 0.8; visibility: visible; color: rgba(200, 55, 55, 255); -unity-font-style: italic;" />
+        <ui:Label text="Game " display-tooltip-when-elided="true" name="game-label" style="-unity-background-image-tint-color: rgb(209, 117, 28); font-size: 58px; align-items: auto; justify-content: space-around; opacity: 0.8; visibility: visible; color: rgb(200, 55, 55); -unity-font-style: italic;" />
     </ui:VisualElement>
-    <ui:Button text="Start Game&#10;" display-tooltip-when-elided="True" name="start-game" view-data-key="game-view-data-key" />
+    <ui:Button text="Start Game&#10;" display-tooltip-when-elided="true" name="start-game" view-data-key="game-view-data-key" />
+    <ui:Button text="Settings&#10;" display-tooltip-when-elided="true" name="settings-button" view-data-key="game-view-data-key" tabindex="2" style="height: 15px;" />
+    <ui:Button text="Quit" display-tooltip-when-elided="true" name="quit-button" view-data-key="game-view-data-key" tabindex="2" style="height: 19px;" />
 </ui:UXML>

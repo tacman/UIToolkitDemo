@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
-
-public class GameManager : MonoBehaviour
+using UnityEngine.SceneManagement;
+public class UIController : MonoBehaviour
 {
     private VisualElement root;
     private Slider rage;
     private Label label;
     private VisualElement playerStateImage;
-    
+    public AppController AppController;
 
     public void OnEnable() {
         
@@ -22,6 +23,30 @@ public class GameManager : MonoBehaviour
         label.text = Application.productName;
 
         // playerStateImage = root.Q<VisualElement>("PlayerStateImage");
+        Debug.Log("Attaching Handlers.");
+        Button startButton = root.Q<Button>("start-button");
+        Debug.Log(startButton.ToString());
+
+        startButton.clickable = new Clickable(() =>
+        {
+            Debug.Log("Start Button Clicked.");
+            SceneManager.LoadScene("AppScene");
+            // PlayerController.HandleSpellCast(Spell.DarkBomb, SpellType.Area);
+        });
+
+        Button quitButton = root.Q<Button>("quit-button");
+        quitButton.clickable = new Clickable((evt) =>
+        {
+            Debug.Log(evt.ToString());
+            Debug.Log("Quit Button Clicked.");
+#if UNITY_EDITOR
+            // Application.Quit() does not work in the editor so
+            // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif            
+        });
 
     }
 
